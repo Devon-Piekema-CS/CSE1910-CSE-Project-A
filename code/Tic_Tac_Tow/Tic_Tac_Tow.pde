@@ -1,5 +1,8 @@
 int[][] L_board = {{0,0,0},{0,0,0},{0,0,0}};
-int player;
+
+int[][] C_board = {{0,0,0},{0,0,0},{0,0,0}};
+
+int[][] R_board = {{0,0,0},{0,0,0},{0,0,0}};
 
 int boardwidth = 300;
 
@@ -25,7 +28,7 @@ void setup(){
 }
 
 void draw(){
-  strokeWeight(3);
+  strokeWeight(4);
   line(L_vl,10,L_vl,height-10);//Left Grid
   line(L_vr,10,L_vr,height-10);
   line(10,ht,310,ht);
@@ -46,10 +49,34 @@ void draw(){
       int Lx = (L_X*110)+50;
       int Ly = (L_Y*110)+50; 
       ellipseMode(CENTER);
+      strokeWeight(2);
       if(L_board[L_Y][L_X] == 1){
-        ellipse(Lx,Ly,80,80);
+        ellipse(Lx,Ly,60,60);
       }
     }
   }
-
+  
+  for(int C_X = 0; C_X < 3; C_X ++){//Center Board
+    for(int C_Y = 0; C_Y < 3; C_Y ++){
+      int Cx = (C_X*110)+370;
+      int Cy = (C_Y*110)+50; 
+      ellipseMode(CENTER);
+      strokeWeight(2);
+      if(C_board[C_Y][C_X] == 1){
+        ellipse(Cx,Cy,60,60);
+      }
+    }
+  }
+  
+  for(int R_X = 0; R_X < 3; R_X ++){//Right Board
+    for(int R_Y = 0; R_Y < 3; R_Y ++){
+      int Rx = (R_X*110)+690;
+      int Ry = (R_Y*110)+50; 
+      ellipseMode(CENTER);
+      strokeWeight(2);
+      if(R_board[R_Y][R_X] == 1){
+        ellipse(Rx,Ry,60,60);
+      }
+    }
+  }
 }
