@@ -19,32 +19,35 @@ float ht = 120;
 float hb = 220;
 
 void setup(){
-  size(980,340);
+  size(960,320);
   background(255,255,255);
   frameRate(60);
 }
 
 void draw(){
   strokeWeight(3);
-  line(L_vl,20,L_vl,height-20);//Left Grid
-  line(L_vr,20,L_vr,height-20);
-  line(20,ht,320,ht);
-  line(20,hb,320,hb);
+  line(L_vl,10,L_vl,height-10);//Left Grid
+  line(L_vr,10,L_vr,height-10);
+  line(10,ht,310,ht);
+  line(10,hb,310,hb);
   
-  line(C_vl,20,C_vl,height-20);//Center Grid
-  line(C_vr,20,C_vr,height-20);
-  line(340,hb,640,hb);
-  line(340,ht,640,ht);
+  line(C_vl,10,C_vl,height-10);//Center Grid
+  line(C_vr,10,C_vr,height-10);
+  line(330,hb,630,hb);
+  line(330,ht,630,ht);
   
-  line(R_vl,20,R_vl,height-20);//Right Grid
-  line(R_vr,20,R_vr,height-20);
-  line(660,ht,960,ht);
-  line(660,hb,960,hb);
-
-{
-
-for(int XO = 0; XO < 9; XO ++){
-  for(YO = 0; YO < 3; YO ++){
-    
+  line(R_vl,10,R_vl,height-10);//Right Grid
+  line(R_vr,10,R_vr,height-10);
+  line(650,ht,950,ht);
+  line(650,hb,950,hb);
+ 
+  for(int L_XO = 0; L_XO < 3; L_XO ++){//Left Board
+    for(int L_YO = 0; L_YO < 3; L_YO ++){
+      int L_x = ;
+      int L_y = ; 
+      ellipseMode(CENTER);
+      if(
+    }
   }
+
 }
