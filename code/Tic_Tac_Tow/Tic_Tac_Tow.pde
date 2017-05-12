@@ -3,20 +3,20 @@ int player;
 
 int boardwidth = 300;
 
-int w = 980;
-int h = 340;
+int w = 960;
+int h = 320;
 
-float L_vl = 120;//Left Grid
-float L_vr = 220;
+int L_vl = 110;//Left Grid
+int L_vr = 210;
 
-float C_vl = 440;//Center Grid
-float C_vr = 540;
+int C_vl = 430;//Center Grid
+int C_vr = 530;
 
-float R_vl = 760;//Right Grid
-float R_vr = 860;
+int R_vl = 750;//Right Grid
+int R_vr = 850;
 
-float ht = 120;
-float hb = 220;
+int ht = 110;
+int hb = 210;
 
 void setup(){
   size(960,320);
@@ -41,12 +41,14 @@ void draw(){
   line(650,ht,950,ht);
   line(650,hb,950,hb);
  
-  for(int L_XO = 0; L_XO < 3; L_XO ++){//Left Board
-    for(int L_YO = 0; L_YO < 3; L_YO ++){
-      int L_x = ;
-      int L_y = ; 
+  for(int L_X = 0; L_X < 3; L_X ++){//Left Board
+    for(int L_Y = 0; L_Y < 3; L_Y ++){
+      int Lx = (L_X*110)+50;
+      int Ly = (L_Y*110)+50; 
       ellipseMode(CENTER);
-      if(
+      if(L_board[L_Y][L_X] == 1){
+        ellipse(Lx,Ly,80,80);
+      }
     }
   }
 
