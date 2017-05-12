@@ -4,8 +4,7 @@ int[][] C_board = {{0,0,0},{0,0,0},{0,0,0}};//Center Array
 
 int[][] R_board = {{0,0,0},{0,0,0},{0,0,0}};//Right Array
 
-int player1;
-int player2;
+int player = 1;
 
 int w = 960;
 int h = 320;
