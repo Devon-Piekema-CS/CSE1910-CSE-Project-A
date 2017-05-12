@@ -1,4 +1,4 @@
-int[][] L_board = {{0,0,0},{0,0,0},{0,0,0}};//Left Array
+int[][] L_board = {{1,0,0},{1,0,0},{1,0,0}};//Left Array
 
 int[][] C_board = {{0,0,0},{0,0,0},{0,0,0}};//Center Array
 
@@ -30,6 +30,7 @@ void setup(){
 
 void draw(){
   strokeWeight(4);
+  fill(255,255,255);
   line(L_vl,10,L_vl,height-10);//Left Grid
   line(L_vr,10,L_vr,height-10);
   line(10,ht,310,ht);
@@ -86,4 +87,18 @@ void draw(){
       }
     }
   }
+  
+  textAlign(CENTER,CENTER);
+  fill(255,0,255);
+  textSize(100);
+  if(player1 == 1){
+    text("Player 1 Wins",width/2,(height/2)-10);
+  }else if(player2 == 1){
+    text("Player 2 Wins",width/2,(height/2)-10);
+  }
+  
+}
+
+void mouseReleased(){
+  gameOver();
 }
