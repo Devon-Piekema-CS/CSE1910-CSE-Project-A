@@ -3,7 +3,7 @@
 ## Get an Idea for a project.
 
 ## Did you accomplish last week’s goal? Why/why not?
-## Yes, I cam up with the idea for Misère Tic Tac Toe.
+## Yes, I came up with the idea for Misère Tic Tac Toe.
 
 ## What did you learn this week?
 ## I learned that my project might be more dificult than I expected.
