@@ -83,6 +83,17 @@ void draw(){
       }
     }
   }
+  fill(200,200,200);
+  rectMode(CENTER);
+  if(left == 1){
+    rect(width/6,height/2,310,310);
+  }if(center == 1){
+    rect(width/2,height/2,310,310);
+  }if(right == 1){
+    rect(5*width/6,height/2,310,310);
+  }
+  
+  
   
   textAlign(CENTER,CENTER);
   fill(255,0,255);
