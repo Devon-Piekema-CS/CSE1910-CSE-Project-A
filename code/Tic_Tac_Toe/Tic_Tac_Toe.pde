@@ -45,7 +45,7 @@ void draw(){
   line(650,ht,950,ht);
   line(650,hb,950,hb);
  
-  for(int L_X = 0; L_X < 3; L_X ++){//Left Board
+  for(int L_X = 0; L_X < 3; L_X ++){//Left Board marker
     for(int L_Y = 0; L_Y < 3; L_Y ++){
       int Lx = (L_X*110)+50;
       int Ly = (L_Y*110)+50; 
@@ -58,7 +58,7 @@ void draw(){
     }
   }
   
-  for(int C_X = 0; C_X < 3; C_X ++){//Center Board
+  for(int C_X = 0; C_X < 3; C_X ++){//Center Board marker
     for(int C_Y = 0; C_Y < 3; C_Y ++){
       int Cx = (C_X*110)+370;
       int Cy = (C_Y*110)+50; 
@@ -71,7 +71,7 @@ void draw(){
     }
   }
   
-  for(int R_X = 0; R_X < 3; R_X ++){//Right Board
+  for(int R_X = 0; R_X < 3; R_X ++){//Right Board marker
     for(int R_Y = 0; R_Y < 3; R_Y ++){
       int Rx = (R_X*110)+690;
       int Ry = (R_Y*110)+50; 
@@ -94,15 +94,22 @@ void draw(){
     rect(5*width/6,height/2,310,310);
   }
   
-  
+  if(plays%2 == 0){
+    player = 1;
+  }else{
+    player = 2;
+  }
   
   textAlign(CENTER,CENTER);//victory notice
-  fill(255,0,255);
   textSize(100);
-  if(player1 == 1){
-    text("Player 1 Wins",width/2,(height/2)-10);
-  }else if(player2 == 1){
-    text("Player 2 Wins",width/2,(height/2)-10);
+  if(left + center + right == 3){
+    if(player == 1){
+      fill(0,0,255);
+      text("Player 1 Wins",width/2,(height/2)-10);
+    }else if(player == 2){
+      fill(255,0,0);
+      text("Player 2 Wins",width/2,(height/2)-10);
+    }
   }
   
 }

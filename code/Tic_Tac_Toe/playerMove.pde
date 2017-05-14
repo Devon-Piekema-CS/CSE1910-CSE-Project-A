@@ -1,7 +1,9 @@
 int tmp = 0;
 int plays = 0;
+int last = 0;
 
 void mouseReleased(){
+    
   if(left == 0){
     if(mouseX < L_vl && mouseX > 10 && mouseY < ht && mouseY > 10){//L_tl
         if(L_board[0][0] == 0){
@@ -181,13 +183,22 @@ void mouseReleased(){
         }
     }
   }
+    last = plays;
     plays = 0;
-  for(int i = 0; i < 3; i++){
+  for(int i = 0; i < 3; i++){//play counter
     for(int j = 0; j < 3; j++){
       tmp = L_board[i][j] + C_board[i][j] + R_board[i][j];
       plays = plays + tmp;
     }  
   }  
+  
+  if(last == plays - 1){
+    if(player == 1){
+      stroke(255,0,0);
+    }else if(player == 2){
+      stroke(0,0,255);
+    }
+  }
 //  println(plays);
   deadBoard();
     
@@ -199,4 +210,5 @@ void mouseReleased(){
   }
 //  println(" | ");
 //  println(mouseX,",",mouseY);
+println(player);
 }

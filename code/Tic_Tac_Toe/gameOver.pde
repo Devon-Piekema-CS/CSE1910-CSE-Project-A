@@ -1,5 +1,3 @@
-int player1 = 0;
-int player2 = 0;
 int left = 0;
 int center = 0;
 int right = 0;
