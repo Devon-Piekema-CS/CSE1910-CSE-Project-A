@@ -102,5 +102,11 @@ void draw(){
 }
 
 void mouseReleased(){
-  
+  if(mouseX > 2*width/3){//right grid
+    R_board[x][y] = 1;
+  }else if(mouseX > width/3){
+    C_board[x][y] = 1;
+  }else if(mouseX < width/3){
+    L_board[x][y] = 1;
+  }
 }
