@@ -1,0 +1,16 @@
+void Reset(){
+  for(int i = 0; i < 3; i++){//play counter
+    for(int j = 0; j < 3; j++){
+      background(255,255,255);
+      L_board[i][j] = 0;
+      C_board[i][j] = 0;
+      R_board[i][j] = 0;
+      left = 0;
+      center = 0;
+      right = 0;
+      stroke(0,0,255);
+      last = 0;
+      plays = 0;
+    }  
+  }  
+}

@@ -101,14 +101,14 @@ void draw(){
   }
   
   textAlign(CENTER,CENTER);//victory notice
-  textSize(100);
+  textSize(125);
   if(left + center + right == 3){
     if(player == 1){
       fill(0,0,255);
-      text("Player 1 Wins",width/2,(height/2)-10);
+      text("Blue Wins",width/2,(height/2)-10);
     }else if(player == 2){
       fill(255,0,0);
-      text("Player 2 Wins",width/2,(height/2)-10);
+      text("Red Wins",width/2,(height/2)-10);
     }
   }
   
