@@ -60,7 +60,7 @@ void playerMove(){
       }else{
        triple = false;
       }
-    }else if(mouseX > R_vl && mouseX < R_vr && mouseY < ht){//top midle
+    }else if(mouseX > R_vl && mouseX < R_vr && mouseY < ht){//top middle
       if(R_board[1][0] == 0){
        triple = true;
        x = 0;
@@ -135,11 +135,19 @@ void playerMove(){
       }else{
        triple = false;
       }
-    }else if(mouseX > C_vl && mouseX < C_vr && mouseY < ht){//top midle
+    }else if(mouseX > C_vl && mouseX < C_vr && mouseY < ht){//top middle
       if(C_board[1][0] == 0){
        triple = true;
        x = 0;
        y = 1;
+      }else{
+       triple = false;
+      }
+    }else if(mouseX < C_vl && mouseY < ht){//top left
+      if(C_board[0][0] == 0){
+       triple = true;
+       x = 0;
+       y = 0;
       }else{
        triple = false;
       }
@@ -201,11 +209,19 @@ void playerMove(){
       }else{
        triple = false;
       }
-    }else if(mouseX > L_vl && mouseX < L_vr && mouseY < ht){//top midle
+    }else if(mouseX > L_vl && mouseX < L_vr && mouseY < ht){//top middle
       if(L_board[1][0] == 0){
        triple = true;
        x = 0;
        y = 1;
+      }else{
+       triple = false;
+      }
+    }else if(mouseX < L_vl && mouseY < ht){//top left
+      if(L_board[0][0] == 0){
+       triple = true;
+       x = 0;
+       y = 0;
       }else{
        triple = false;
       }

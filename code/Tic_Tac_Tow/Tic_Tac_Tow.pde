@@ -55,8 +55,6 @@ void draw(){
       strokeWeight(2);
       if(L_board[L_Y][L_X] == 1){
         ellipse(Lx,Ly,60,60);
-      }else if(L_board[L_Y][L_X] == 2){
-        ellipse(Lx,Ly,60,60);
       }
     }
   }
@@ -69,8 +67,6 @@ void draw(){
       strokeWeight(2);
       if(C_board[C_Y][C_X] == 1){
         ellipse(Cx,Cy,60,60);
-      }else if(C_board[C_Y][C_X] == 2){
-        ellipse(Cx,Cy,60,60);
       }
     }
   }
@@ -82,8 +78,6 @@ void draw(){
       ellipseMode(CENTER);
       strokeWeight(2);
       if(R_board[R_Y][R_X] == 1){
-        ellipse(Rx,Ry,60,60);
-      }else if(R_board[R_Y][R_X] == 2){
         ellipse(Rx,Ry,60,60);
       }
     }
@@ -99,6 +93,7 @@ void draw(){
   }
   
   playerMove();
+  
 }
 
 void mouseReleased(){
@@ -109,4 +104,10 @@ void mouseReleased(){
   }else if(mouseX < width/3){
     L_board[x][y] = 1;
   }
+for(int i = 0; i < 3; i++){
+  for(int j = 0; j < 3; j++){
+    print("  | ",L_board[i][j]);
+  }
+}
+println(" | ");
 }
