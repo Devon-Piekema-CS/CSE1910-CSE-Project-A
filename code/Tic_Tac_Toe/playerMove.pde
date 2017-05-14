@@ -196,10 +196,10 @@ void mouseReleased(){
       }  
     }   
   
-    if(last == plays - 1){
+    if(last == plays - 1){//Reds turn
       if(player == 1){
         stroke(255,0,0);
-      }else if(player == 2){
+      }else if(player == 2){//Blues turn
         stroke(0,0,255);
       }
     }
@@ -214,6 +214,6 @@ void mouseReleased(){
     }
 //  println(" | ");
 //  println(mouseX,",",mouseY);
-println(player);
+//  println(player);
   }
 }

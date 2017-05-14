@@ -25,12 +25,11 @@ void setup(){
   size(960,320);
   background(255,255,255);
   frameRate(60);
+  stroke(0,0,255);//blue starts
 }
 
 void draw(){
   strokeWeight(4);
-  fill(0,0,255);
-  
   fill(200,200,200);//dead board cover
   rectMode(CENTER);
   if(left == 1){
@@ -95,7 +94,7 @@ void draw(){
     }
   }
   
-  if(plays%2 == 0){
+  if(plays%2 == 0){//turn changer
     player = 1;
   }else{
     player = 2;
