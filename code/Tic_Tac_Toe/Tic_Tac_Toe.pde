@@ -29,7 +29,18 @@ void setup(){
 
 void draw(){
   strokeWeight(4);
-  fill(255,255,255);
+  fill(0,0,255);
+  
+  fill(200,200,200);//dead board cover
+  rectMode(CENTER);
+  if(left == 1){
+    rect(width/6,height/2,310,310);
+  }if(center == 1){
+    rect(width/2,height/2,310,310);
+  }if(right == 1){
+    rect(5*width/6,height/2,310,310);
+  }
+  
   line(L_vl,10,L_vl,height-10);//Left Grid
   line(L_vr,10,L_vr,height-10);
   line(10,ht,310,ht);
@@ -51,7 +62,7 @@ void draw(){
       int Ly = (L_Y*110)+50; 
       ellipseMode(CENTER);
       strokeWeight(2);
-      fill(255,255,255);
+      noFill();
       if(L_board[L_X][L_Y] == 1){
         ellipse(Lx,Ly,60,60);
       }
@@ -64,7 +75,7 @@ void draw(){
       int Cy = (C_Y*110)+50; 
       ellipseMode(CENTER);
       strokeWeight(2);
-      fill(255,255,255);
+      noFill();
       if(C_board[C_X][C_Y] == 1){
         ellipse(Cx,Cy,60,60);
       }
@@ -77,21 +88,11 @@ void draw(){
       int Ry = (R_Y*110)+50; 
       ellipseMode(CENTER);
       strokeWeight(2);
-      fill(255,255,255);
+      noFill();
       if(R_board[R_X][R_Y] == 1){
         ellipse(Rx,Ry,60,60);
       }
     }
-  }
-  
-  fill(200,200,200);//dead board cover
-  rectMode(CENTER);
-  if(left == 1){
-    rect(width/6,height/2,310,310);
-  }if(center == 1){
-    rect(width/2,height/2,310,310);
-  }if(right == 1){
-    rect(5*width/6,height/2,310,310);
   }
   
   if(plays%2 == 0){
