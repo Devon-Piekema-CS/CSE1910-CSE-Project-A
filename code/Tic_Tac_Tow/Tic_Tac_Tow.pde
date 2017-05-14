@@ -18,7 +18,7 @@ int C_vr = 530;
 int R_vl = 750;//Right Grid
 int R_vr = 850;
 
-int ht = 110;
+int ht = 110;//horizontal lines
 int hb = 210;
 
 void setup(){
@@ -83,7 +83,7 @@ void draw(){
       }
     }
   }
-  fill(200,200,200);
+  fill(200,200,200);//dead board cover
   rectMode(CENTER);
   if(left == 1){
     rect(width/6,height/2,310,310);
@@ -95,7 +95,7 @@ void draw(){
   
   
   
-  textAlign(CENTER,CENTER);
+  textAlign(CENTER,CENTER);//victory notice
   fill(255,0,255);
   textSize(100);
   if(player1 == 1){
