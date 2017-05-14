@@ -1,3 +1,6 @@
+int tmp = 0;
+int plays = 0;
+
 void mouseReleased(){
   if(left == 0){
     if(mouseX < L_vl && mouseX > 10 && mouseY < ht && mouseY > 10){//L_tl
@@ -178,16 +181,22 @@ void mouseReleased(){
         }
     }
   }
-    
-    
+    plays = 0;
+  for(int i = 0; i < 3; i++){
+    for(int j = 0; j < 3; j++){
+      tmp = L_board[i][j] + C_board[i][j] + R_board[i][j];
+      plays = plays + tmp;
+    }  
+  }  
+//  println(plays);
   deadBoard();
     
     //*******************************************************
   for(int i = 0; i < 3; i++){
     for(int j = 0; j < 3; j++){
-      print(" | ",L_board[i][j]);
+     // print(" | ",L_board[i][j]);
     }
   }
-  println(" | ");
-  println(mouseX,",",mouseY);
+//  println(" | ");
+//  println(mouseX,",",mouseY);
 }

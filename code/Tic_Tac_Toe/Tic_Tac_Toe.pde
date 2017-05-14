@@ -83,6 +83,7 @@ void draw(){
       }
     }
   }
+  
   fill(200,200,200);//dead board cover
   rectMode(CENTER);
   if(left == 1){
