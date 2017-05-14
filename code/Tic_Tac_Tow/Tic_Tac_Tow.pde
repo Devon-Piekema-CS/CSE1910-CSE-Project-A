@@ -21,8 +21,6 @@ int R_vr = 850;
 int ht = 110;
 int hb = 210;
 
-boolean triple;
-
 void setup(){
   size(960,320);
   background(255,255,255);
@@ -53,7 +51,8 @@ void draw(){
       int Ly = (L_Y*110)+50; 
       ellipseMode(CENTER);
       strokeWeight(2);
-      if(L_board[L_Y][L_X] == 1){
+      fill(255,255,255);
+      if(L_board[L_X][L_Y] == 1){
         ellipse(Lx,Ly,60,60);
       }
     }
@@ -65,7 +64,8 @@ void draw(){
       int Cy = (C_Y*110)+50; 
       ellipseMode(CENTER);
       strokeWeight(2);
-      if(C_board[C_Y][C_X] == 1){
+      fill(255,255,255);
+      if(C_board[C_X][C_Y] == 1){
         ellipse(Cx,Cy,60,60);
       }
     }
@@ -77,7 +77,8 @@ void draw(){
       int Ry = (R_Y*110)+50; 
       ellipseMode(CENTER);
       strokeWeight(2);
-      if(R_board[R_Y][R_X] == 1){
+      fill(255,255,255);
+      if(R_board[R_X][R_Y] == 1){
         ellipse(Rx,Ry,60,60);
       }
     }
@@ -92,22 +93,4 @@ void draw(){
     text("Player 2 Wins",width/2,(height/2)-10);
   }
   
-  playerMove();
-  
-}
-
-void mouseReleased(){
-  if(mouseX > 2*width/3){//right grid
-    R_board[x][y] = 1;
-  }else if(mouseX > width/3){
-    C_board[x][y] = 1;
-  }else if(mouseX < width/3){
-    L_board[x][y] = 1;
-  }
-for(int i = 0; i < 3; i++){
-  for(int j = 0; j < 3; j++){
-    print("  | ",L_board[i][j]);
-  }
-}
-println(" | ");
 }
