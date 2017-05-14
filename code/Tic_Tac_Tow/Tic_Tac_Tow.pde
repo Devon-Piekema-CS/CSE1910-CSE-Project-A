@@ -1,4 +1,4 @@
-int[][] L_board = {{1,0,0},{1,0,0},{1,0,0}};//Left Array
+int[][] L_board = {{0,0,0},{0,0,0},{0,0,0}};//Left Array
 
 int[][] C_board = {{0,0,0},{0,0,0},{0,0,0}};//Center Array
 
@@ -20,6 +20,8 @@ int R_vr = 850;
 
 int ht = 110;
 int hb = 210;
+
+boolean triple;
 
 void setup(){
   size(960,320);
@@ -96,8 +98,9 @@ void draw(){
     text("Player 2 Wins",width/2,(height/2)-10);
   }
   
+  playerMove();
 }
 
 void mouseReleased(){
-  gameOver();
+  
 }
