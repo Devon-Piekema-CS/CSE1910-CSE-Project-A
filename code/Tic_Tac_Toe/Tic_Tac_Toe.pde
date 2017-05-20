@@ -26,7 +26,7 @@ void setup(){
 
 void draw(){
   background(255,255,255);
-  if(gameType == 0){
+  if(gameType == 0){//draw gameType select
     gameType();
     strokeWeight(4);
     textSize(125);
@@ -35,7 +35,9 @@ void draw(){
     line(0,height/2,width,height/2);
     text("SinglePlayer",width/2,120);
     text("MultiPlayer",width/2,280);
-  }else if(gameType == 1){
+  }
+  
+  else if(gameType == 1 || gameType == 2){
     strokeWeight(4);
     fill(200,200,200);//dead board cover
     rectMode(CENTER);
@@ -118,7 +120,5 @@ void draw(){
         text("Red Wins",width/2,(height/2)-10);
       }
     }
-  }else if(gameType == 2){
-    
   }
 }
