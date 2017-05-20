@@ -1,3 +1,5 @@
+int YAY[] = {a, b*c, b*b, c*c}; 
+
 //quick access to board coordinates
 int L_p1 = 0;//left
 int L_p2 = 0;
@@ -171,6 +173,12 @@ void positions(){
     
     R_ld = R_p1 + R_p5 + R_p9;  //left diaginal
     R_rd = R_p3 + R_p5 + R_p7;  //right diaginal
+    
+    
+    
+    if(L_lc == 0 && L_mc == 0 && L_rc == 0){
+      
+    }
   
   }
 }
