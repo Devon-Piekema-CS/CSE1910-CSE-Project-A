@@ -4,6 +4,16 @@ int last = 0;
 
 void mouseReleased(){
   
+  if(gameType == 0){
+  
+    if(mouseY > height/2){
+      gameType = 1;
+    }else if(mouseY < height/2){
+      gameType = 2;
+    }
+    
+  }else if(gameType == 1){
+  
   if(left + center + right == 3){
     Reset();
   }else{
@@ -215,5 +225,9 @@ void mouseReleased(){
 //  println(" | ");
 //  println(mouseX,",",mouseY);
 //  println(player);
+  }
+  
+  }else if(gameType == 2){
+    
   }
 }
