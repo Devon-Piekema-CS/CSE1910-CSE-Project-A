@@ -422,20 +422,15 @@ void mouseReleased(){
       }  
     }   
   
-    if(last == plays - 1){//Reds turn
-      if(player == 1){
-        stroke(255,0,0);
-      }else if(player == 2){//Blues turn
-        stroke(0,0,255);
-      }
+    if(last == plays - 1){//AI's turn
+      AI();
     }
-//  println(plays);
     deadBoard();
     
     //*******************************************************
     for(int i = 0; i < 3; i++){
       for(int j = 0; j < 3; j++){
-     // print(" | ",L_board[i][j]);
+     print(" | ",L_board[i][j]);
       }
     }
   }
