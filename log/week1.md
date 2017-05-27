@@ -1,9 +1,9 @@
-# Log Message for Major Project for Week 1
+# Log Message for Major Project for Week 1 (april 29 - may 6)
 ## What was your goal for the past week?
 ## Get an Idea for a project.
 
 ## Did you accomplish last week’s goal? Why/why not?
-## Yes, I came up with the idea for Misère Tic Tac Toe.
+## Yes, I came up with the idea for Triple Misère Tic Tac Toe.
 
 ## What did you learn this week?
 ## I learned that my project might be more dificult than I expected.
