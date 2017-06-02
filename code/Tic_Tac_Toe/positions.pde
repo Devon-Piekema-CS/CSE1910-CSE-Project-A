@@ -1,4 +1,4 @@
-int YAY[] = {a, b*c, b*b, c*c}; 
+/*
 
 //quick access to board coordinates
 int L_p1 = 0;//left
@@ -182,3 +182,5 @@ void positions(){
   
   }
 }
+
+*/
