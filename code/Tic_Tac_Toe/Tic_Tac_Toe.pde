@@ -27,7 +27,6 @@ void setup(){
 void draw(){
   background(255,255,255);
   if(gameType == 0){//draw gameType select
-    gameType();
     strokeWeight(4);
     textSize(125);
     textAlign(CENTER);

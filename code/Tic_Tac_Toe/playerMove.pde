@@ -8,6 +8,7 @@ void mouseReleased(){
   
     if(mouseY > height/2){
       gameType = 1;
+      stroke(0,0,255);
     }else if(mouseY < height/2){
       gameType = 2;
     }
