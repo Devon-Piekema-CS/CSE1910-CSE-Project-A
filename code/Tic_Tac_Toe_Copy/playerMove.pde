@@ -1,7 +1,18 @@
+int last = 0;
+int plays = 0;
+
 void mouseReleased(){  
   if(left + center + right == 3){
     Reset();
   }else{
+    
+  last = 0;
+  for(int i = 0; i < 3; i++){//play counter
+    for(int j = 0; j < 3; j++){
+      tmp = L_board[i][j] + C_board[i][j] + R_board[i][j];
+      last = last + tmp;
+    }  
+  } 
     
   if(left == 0){
     if(mouseX < L_vl && mouseX > 10 && mouseY < ht && mouseY > 10){//L_tl
@@ -182,8 +193,22 @@ void mouseReleased(){
         }
       }
     }
-    AI();
-    deadBoard();
+    plays = 0;
+    for(int i = 0; i < 3; i++){//play counter
+      for(int j = 0; j < 3; j++){
+        tmp = L_board[i][j] + C_board[i][j] + R_board[i][j];
+        plays = plays + tmp;
+      }  
+    }
+    if(plays == last + 1){
+      deadBoard();
+      AI();
+    }  
+    
+
+    
+    
+    
     
     //*******************************************************
     //debug
