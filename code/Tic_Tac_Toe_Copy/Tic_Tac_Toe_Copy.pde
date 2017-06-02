@@ -91,4 +91,5 @@ void draw(){
       }
     }
   }
+  deadBoard();
 }
