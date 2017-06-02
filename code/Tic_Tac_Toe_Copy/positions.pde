@@ -12,6 +12,8 @@ int L_code;
 int C_code;
 int R_code;
 
+int tmp;
+
 void positions(){
   L_code = 0;
   tmp = 7;

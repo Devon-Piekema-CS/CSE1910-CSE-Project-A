@@ -1,4 +1,6 @@
 int Count;
+int counter;
+int random;
 void AI(){
   Count = 0;
   for(int i = 0; i < 3; i++){//look for available moves
@@ -331,6 +333,30 @@ void AI(){
   println();
   println();
   //******************************************************
+  
+  counter = 0;
+  random = int(random(1,Count));
+  for(int i = 0; i < 3; i++){//Count the posible moves
+    for(int j = 0; j < 3; j++){
+      if(L_board[j][i] == 3){
+        counter++;
+        if(counter == random){
+          L_board[j][i] = 1;
+        }
+      }if(C_board[j][i] == 3){
+        counter++;
+        if(counter == random){
+          C_board[j][i] = 1;
+        }
+      }if(R_board[j][i] == 3){
+        counter++;
+        if(counter == random){
+          R_board[j][i] = 1;
+        }
+      }
+    }
+  }
+    
   
   
   

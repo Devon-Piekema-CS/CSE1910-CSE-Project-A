@@ -8,8 +8,6 @@ void Reset(){
       left = 0;
       center = 0;
       right = 0;
-      last = 0;
-      plays = 0;
     }  
   }  
 }

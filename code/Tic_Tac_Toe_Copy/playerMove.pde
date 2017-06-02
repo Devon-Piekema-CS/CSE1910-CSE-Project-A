@@ -1,7 +1,3 @@
-int tmp = 0;
-int plays = 0;
-int last = 0;
-
 void mouseReleased(){  
   if(left + center + right == 3){
     Reset();
@@ -186,20 +182,7 @@ void mouseReleased(){
         }
       }
     }
-    
-    
-    last = plays;
-    plays = 0;
-    for(int i = 0; i < 3; i++){//play counter
-      for(int j = 0; j < 3; j++){
-        tmp = L_board[i][j] + C_board[i][j] + R_board[i][j];
-        plays = plays + tmp;
-      }  
-    }   
-  
-    if(last == plays - 1){//AI's turn
-      AI();
-    }
+    AI();
     deadBoard();
     
     //*******************************************************
