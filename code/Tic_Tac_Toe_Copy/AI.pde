@@ -11,10 +11,63 @@ int d = 9;
 int leftboard = c;
 int centerboard = c;
 int rightboard = c;
+
+int L_code;
+int C_code;
+int R_code;
 void AI(){
   //****************************************************************************************
+  L_code = 0;
+  tmp = 7;
+  for(int i = 0; i < 3; i++){//assign code for each board outcome
+    for(int j = 0; j < 3; j++){
+      if(L_board[j][i] == 1){
+        L_code = (L_code * 10) + tmp;
+        print(" | ",L_code);
+      }
+      if(tmp == 9 || tmp == 6 || tmp == 3){
+        tmp = tmp - 5;
+      }else{
+        tmp++;
+      }
+    }
+  }
   
   
+  
+  C_code = 0;
+  tmp = 7;
+  for(int i = 0; i < 3; i++){//assign code for each board outcome
+    for(int j = 0; j < 3; j++){
+      if(C_board[j][i] == 1){
+        C_code = (C_code * 10) + tmp;
+        print(" | ",C_code);
+      }
+      if(tmp == 9 || tmp == 6 || tmp == 3){
+        tmp = tmp - 5;
+      }else{
+        tmp++;
+      }
+    }
+  }
+  
+  
+  R_code = 0;
+  tmp = 7;
+  for(int i = 0; i < 3; i++){//assign code for each board outcome
+    for(int j = 0; j < 3; j++){
+      if(R_board[j][i] == 1){
+        R_code = (R_code * 10) + tmp;
+        print(" | ",R_code);
+      }
+      if(tmp == 9 || tmp == 6 || tmp == 3){
+        tmp = tmp - 5;
+      }else{
+        tmp++;
+      }
+    }
+  }
+  println(" |");
   
   
   
