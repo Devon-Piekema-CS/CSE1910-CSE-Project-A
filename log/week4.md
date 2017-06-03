@@ -13,7 +13,7 @@ I learned that coding an AI is much harder than I thought it would be.  Its gett
 
 ## What is your goal for next week?
 
-HMy goal for this week is hopfully to get more of the AI working and have some sort of apponant for single player mode, even if its note very good at the game.
+My goal for this week is hopfully to get more of the AI working and have some sort of apponant for single player mode, even if its note very good at the game.
 
 ## What are the main challenges you are facing next week?
 
