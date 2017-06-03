@@ -18,6 +18,7 @@ int R_vr = 850;
 
 int ht = 110;//horizontal lines
 int hb = 210;
+boolean HARD = false;
 
 void setup(){
   size(960,320);
@@ -27,6 +28,10 @@ void setup(){
 void draw(){
   background(255,255,255);
   if(gameType == 0){//draw gameType select
+    fill(25,25,255);
+    rect(0,0,width,height/2);
+    fill(0,255,255);
+    rect(0,height/2,width,height);
     strokeWeight(4);
     textSize(125);
     textAlign(CENTER);
@@ -35,10 +40,6 @@ void draw(){
     text("SinglePlayer",width/2,120);
     text("MultiPlayer",width/2,280);
   }else if(gameType == 1 || gameType == 2){
-    
-    
-    
-    
     strokeWeight(4);
     fill(200,200,200);//dead board cover
     rectMode(CENTER);
@@ -135,6 +136,23 @@ void draw(){
         }
       }
     }
-}
+  }else if(gameType == 3){
+    strokeWeight(4);
+    fill(25,25,255);
+    rect(0,0,width,height/2);
+    fill(0,255,0);
+    rect(0,height/2,width/2,height/2);
+    fill(255,0,0);
+    rect(width/2,height/2,width/2,height/2);
+    noFill();
+    textSize(125);
+    textAlign(CENTER);
+    fill(0,0,0);
+    line(0,height/2,width,height/2);
+    line(width/2,height/2,width/2,height);
+    text("Difficulty",width/2,120);
+    text("Easy",width/4,280);
+    text("Hard",3*width/4,280);
+  }
   deadBoard();
 }

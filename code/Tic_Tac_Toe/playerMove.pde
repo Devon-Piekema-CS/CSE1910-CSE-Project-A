@@ -7,12 +7,21 @@ void mouseReleased(){
   if(gameType == 0){
   
     if(mouseY > height/2){
-      gameType = 1;
-      stroke(0,0,255);
+      gameType = 1;//multiplayer
+      stroke(0,0,255);//blue player starts
     }else if(mouseY < height/2){
-      gameType = 2;
+      gameType = 3;//singleplayer
     }
     
+  }else if(gameType == 3){
+    if(mouseY > height/2){
+      if(mouseX < width/2){
+        gameType = 2;
+      }else if(mouseX > width/2){
+        HARD = true;
+        gameType = 2;
+      }
+    }
   }else if(gameType == 1){//MultiPlayer
   
     if(left + center + right == 3){
@@ -217,7 +226,7 @@ void mouseReleased(){
 //  println(plays);
     deadBoard();
     
-    //*******************************************************
+  //------------------------------------------------------------------------------------------------------
     for(int i = 0; i < 3; i++){
       for(int j = 0; j < 3; j++){
      // print(" | ",L_board[i][j]);
@@ -428,7 +437,7 @@ void mouseReleased(){
         plays = plays + tmp;
       }  
     }
-    if(plays == last + 1){
+    if(plays == last + 1){//if player moved, move on to AI's Turn
       deadBoard();
       AI();
     }  
@@ -441,29 +450,24 @@ void mouseReleased(){
     //*******************************************************
     //debug
     
-    for(int i = 0; i < 3; i++){
-      for(int j = 0; j < 3; j++){
-//     print(" | ",L_board[j][i]);
+      for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+//        print(" | ",L_board[j][i]);
+        }
+      }
+//      print(" |  ---  ");
+      for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+//       print(" | ",C_board[j][i]);
+        }
+      }
+//      print(" |  ---  ");    
+      for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+//       print(" | ",R_board[j][i]);
+        }
       }
     }
-//    print(" |  ---  ");
-    for(int i = 0; i < 3; i++){
-      for(int j = 0; j < 3; j++){
-//     print(" | ",C_board[j][i]);
-      }
-    }
-//    print(" |  ---  ");    
-    for(int i = 0; i < 3; i++){
-      for(int j = 0; j < 3; j++){
-//     print(" | ",R_board[j][i]);
-      }
-    }
-    
-//    println(" |");
-//    println();
-//    println();
-//    println();
   }
-  }
-  
 }
+//************************************************************
