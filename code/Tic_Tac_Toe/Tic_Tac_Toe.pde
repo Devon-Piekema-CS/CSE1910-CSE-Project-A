@@ -36,7 +36,18 @@ void draw(){
     line(0,height/2,width,height/2);
     text("SinglePlayer",width/2,120);
     text("MultiPlayer",width/2,280);
-  }else if(gameType == 1 || gameType == 2){
+  }else if(gameType == 2){
+    
+    //---------------------------------------------------------------------------------------------
+    
+    strokeWeight(4);
+    textSize(125);
+    textAlign(CENTER);
+    fill(0,0,0);
+    line(width/2,0,width/2,height);
+    text("Easy",width/4,height/2);
+    text("Hard",3*width/4,height/2);
+  }else if(gameType == 1 || gameType == 3){
     
     //---------------------------------------------------------------------------------------------
     
@@ -126,7 +137,7 @@ void draw(){
           text("Red Wins",width/2,(height/2)-10);
         }
       }
-    }else if(gameType == 2){
+    }else if(gameType == 3){
       textAlign(CENTER,CENTER);//victory notice
       textSize(125);
       if(left + center + right == 3){

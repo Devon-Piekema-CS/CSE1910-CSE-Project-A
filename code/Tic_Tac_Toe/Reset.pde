@@ -17,7 +17,7 @@ void Reset(){
     
     //---------------------------------------------------------------------------------------------
     
-  }else if(gameType == 2){
+  }else if(gameType == 3){
     for(int i = 0; i < 3; i++){
       for(int j = 0; j < 3; j++){//reset all variables
         background(255,255,255);

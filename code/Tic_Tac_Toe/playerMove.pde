@@ -1,6 +1,7 @@
 int tmp = 0;
 int plays = 0;
 int last = 0;
+boolean HARD;
 
 void mouseReleased(){
   
@@ -13,6 +14,14 @@ void mouseReleased(){
       gameType = 2;
     }
     
+  }else if(gameType == 2){
+    if(mouseX < width/2){
+      HARD = false;
+      gameType = 3;
+    }else if(mouseX > width/2){
+      HARD = true;
+      gameType = 3;
+    }
   }else if(gameType == 1){//MultiPlayer
   
     if(left + center + right == 3){
@@ -228,7 +237,7 @@ void mouseReleased(){
 //  println(player);
   }
   
-  }else if(gameType == 2){//SinglePlayer
+  }else if(gameType == 3){//SinglePlayer
     
       if(left + center + right == 3){
     Reset();
