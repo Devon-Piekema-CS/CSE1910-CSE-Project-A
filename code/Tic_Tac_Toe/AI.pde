@@ -346,21 +346,7 @@ void AI(){
   
   //****************************************************** 
   //------------------------------------------------------------------------------------------------------------------------
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
   if(HARD == true){
     L = false;
     C = false;
@@ -470,8 +456,6 @@ void AI(){
     
     //--------------------------------------------------------------------------------------------
     
-    
-    
     if(L == true || C == true || R == true){
       none = 0;
       counter = 0;
@@ -488,7 +472,6 @@ void AI(){
           for(int j = 0; j < 3; j++){
             if(C_board[j][i] == 0){
               none++;
-              print(" - ",none," - ");
             }
           }
         }
@@ -501,25 +484,32 @@ void AI(){
           }
         }
       }
+      
+         //-------------------------------------------------------------
     
-    println(none);
       random = int(random(1,none));
       for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
-          if(L_board[j][i] == 0){
-            counter++;
-            if(counter == random){
-              L_board[j][i] = 1;
+          if(L == true){
+            if(L_board[j][i] == 0){
+              counter++;
+              if(counter == random){
+                L_board[j][i] = 1;
+              }
             }
-          }if(C_board[j][i] == 0){
-            counter++;
-            if(counter == random){
-              C_board[j][i] = 1;
+          }if(C == true){
+            if(C_board[j][i] == 0){
+              counter++;
+              if(counter == random){
+                C_board[j][i] = 1;
+              }
             }
-          }if(R_board[j][i] == 0){
-            counter++;
-            if(counter == random){
-              R_board[j][i] = 1;
+          }if(R == true){
+            if(R_board[j][i] == 0){
+              counter++;
+              if(counter == random){
+                R_board[j][i] = 1;
+              }
             }
           }
         }
@@ -583,7 +573,8 @@ void AI(){
           }
         }
    
-      
+   //-------------------------------------------------------------
+   
         deadBoard();
         if(left + center + right == 3){
           player = 1;
@@ -593,25 +584,10 @@ void AI(){
       }
     }
 
-    
-      print(left + center + right,"  ");
-      println(L,C,R);
-      println(left,center,right);
-    
-    
-    
-        
-        
-        
-        
-        
-        
-    
-    
-    
-    
-    
-    
+//      print(left + center + right,"  ");
+//      println(L,C,R);
+//      println(left,center,right);
+
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
   }else if(HARD == false){
