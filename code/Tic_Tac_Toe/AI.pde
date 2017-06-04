@@ -347,21 +347,55 @@ void AI(){
   //****************************************************** 
   //------------------------------------------------------------------------------------------------------------------------
   
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   if(HARD == true){
-    
+    L = false;
+    C = false;
+    R = false;
     if(left + center + right == 1){
       if(left == 1){
         for(int i = 0; i < 3; i++){
           for(int j = 0; j < 3; j++){
             if(C_board[j][i] == 3){
-              R = true;
-            }else{
-              R = false;
+              for(int h = 0; h < 3; h++){
+                for(int k = 0; k < 3; k++){
+                  if(C_board[h][k] == 0){
+                    for(int o = 0; o < 3; o++){
+                      for(int f = 0; f < 3; f++){
+                        if(R_board[o][f] == 3){
+                        }else{C = true;}
+                      }
+                    }
+                  }
+                }
+              }
             }
             if(R_board[j][i] == 3){
-              C = true;
-            }else{
-              C = false;
+              for(int h = 0; h < 3; h++){
+                for(int k = 0; k < 3; k++){
+                  if(R_board[h][k] == 0){
+                    for(int o = 0; o < 3; o++){
+                      for(int f = 0; f < 3; f++){
+                        if(C_board[o][f] == 3){
+                        }else{R = true;}
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -369,14 +403,32 @@ void AI(){
         for(int i = 0; i < 3; i++){
           for(int j = 0; j < 3; j++){
             if(L_board[j][i] == 3){
-              R = true;
-            }else{
-              R = false;
+              for(int h = 0; h < 3; h++){
+                for(int k = 0; k < 3; k++){
+                  if(L_board[h][k] == 0){
+                    for(int o = 0; o < 3; o++){
+                      for(int f = 0; f < 3; f++){
+                        if(R_board[o][f] == 3){
+                        }else{L = true;}
+                      }
+                    }
+                  }
+                }
+              }
             }
             if(R_board[j][i] == 3){
-              L = true;
-            }else{
-              L = false;
+              for(int h = 0; h < 3; h++){
+                for(int k = 0; k < 3; k++){
+                  if(R_board[h][k] == 0){
+                    for(int o = 0; o < 3; o++){
+                      for(int f = 0; f < 3; f++){
+                        if(L_board[o][f] == 3){
+                        }else{R = true;}
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -384,14 +436,32 @@ void AI(){
         for(int i = 0; i < 3; i++){
           for(int j = 0; j < 3; j++){
             if(L_board[j][i] == 3){
-              C = true;
-            }else{
-              C = false;
+              for(int h = 0; h < 3; h++){
+                for(int k = 0; k < 3; k++){
+                  if(L_board[h][k] == 0){
+                    for(int o = 0; o < 3; o++){
+                      for(int f = 0; f < 3; f++){
+                        if(C_board[o][f] == 3){
+                        }else{L = true;}
+                      }
+                    }
+                  }
+                }
+              }
             }
             if(C_board[j][i] == 3){
-              L = true;
-            }else{
-              L = false;
+              for(int h = 0; h < 3; h++){
+                for(int k = 0; k < 3; k++){
+                  if(C_board[h][k] == 0){
+                    for(int o = 0; o < 3; o++){
+                      for(int f = 0; f < 3; f++){
+                        if(L_board[o][f] == 3){
+                        }else{C = true;}
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -400,48 +470,53 @@ void AI(){
     
     //--------------------------------------------------------------------------------------------
     
-    if(L == true && C == false && R == false){
-      for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 3; j++){
-          
-        }
-      }
-    }if(L == false && C == true && R == false){
-      for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 3; j++){
-          
-        }
-      }
-    }if(L == false && C == false && R == true){
-      for(int i = 0; i < 3; i++){
-        for(int j = 0; j < 3; j++){
-          
-        }
-      }
-    }
     
-    print(left + center + right,"  ");
-    println(L,C,R);
-    println(left,center,right);
-    //--------------------------------------------------------------------------------------------
     
-    deadBoard();
-    if(left == 0 || center == 0 || right == 0){//player if there are still safe moves
+    if(L == true || C == true || R == true){
+      none = 0;
       counter = 0;
-      random = int(random(1,Count));//chose a random safe move
+      if(L == true && C == false && R == false){
+        for(int i = 0; i < 3; i++){
+          for(int j = 0; j < 3; j++){
+            if(L_board[j][i] == 0){
+              none++;
+            }
+          }
+        }
+      }if(L == false && C == true && R == false){
+        for(int i = 0; i < 3; i++){
+          for(int j = 0; j < 3; j++){
+            if(C_board[j][i] == 0){
+              none++;
+              print(" - ",none," - ");
+            }
+          }
+        }
+      }if(L == false && C == false && R == true){
+        for(int i = 0; i < 3; i++){
+          for(int j = 0; j < 3; j++){
+            if(R_board[j][i] == 0){
+              none++;
+            }
+          }
+        }
+      }
+    
+    println(none);
+      random = int(random(1,none));
       for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
-          if(L_board[j][i] == 3){
+          if(L_board[j][i] == 0){
             counter++;
             if(counter == random){
               L_board[j][i] = 1;
             }
-          }if(C_board[j][i] == 3){
+          }if(C_board[j][i] == 0){
             counter++;
             if(counter == random){
               C_board[j][i] = 1;
             }
-          }if(R_board[j][i] == 3){
+          }if(R_board[j][i] == 0){
             counter++;
             if(counter == random){
               R_board[j][i] = 1;
@@ -449,24 +524,31 @@ void AI(){
           }
         }
       }
+    }else{
     
-      //-------------------------------------------------------------------------------------------------------------
     
-      if(Count == 0){
-        random = int(random(1,none));//if there are no safe moves, chose a random losing move
+      
+    //--------------------------------------------------------------------------------------------
+    
+    
+  
+      deadBoard();
+      if(left == 0 || center == 0 || right == 0){//player if there are still safe moves
+        counter = 0;
+        random = int(random(1,Count));//chose a random safe move
         for(int i = 0; i < 3; i++){
           for(int j = 0; j < 3; j++){
-            if(L_board[j][i] == 0){
+            if(L_board[j][i] == 3){
               counter++;
               if(counter == random){
                 L_board[j][i] = 1;
               }
-            }if(C_board[j][i] == 0){
+            }if(C_board[j][i] == 3){
               counter++;
               if(counter == random){
                 C_board[j][i] = 1;
               }
-            }if(R_board[j][i] == 0){
+            }if(R_board[j][i] == 3){
               counter++;
               if(counter == random){
                 R_board[j][i] = 1;
@@ -474,14 +556,61 @@ void AI(){
             }
           }
         }
-      }
-      deadBoard();
-      if(left + center + right == 3){
-        player = 1;
-      }else{
-        player = 2;
+    
+      //-------------------------------------------------------------------------------------------------------------
+    
+        if(Count == 0){
+          random = int(random(1,none));//if there are no safe moves, chose a random losing move
+          for(int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+              if(L_board[j][i] == 0){
+                counter++;
+                if(counter == random){
+                  L_board[j][i] = 1;
+                }
+              }if(C_board[j][i] == 0){
+                counter++;
+                if(counter == random){
+                  C_board[j][i] = 1;
+                }
+              }if(R_board[j][i] == 0){
+                counter++;
+                if(counter == random){
+                  R_board[j][i] = 1;
+                }
+              }
+            }
+          }
+        }
+   
+      
+        deadBoard();
+        if(left + center + right == 3){
+          player = 1;
+        }else{
+          player = 2;
+        }
       }
     }
+
+    
+      print(left + center + right,"  ");
+      println(L,C,R);
+      println(left,center,right);
+    
+    
+    
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    
+    
     
     /////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
