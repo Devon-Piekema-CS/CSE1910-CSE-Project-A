@@ -343,48 +343,26 @@ void AI(){
   //****************************************************** 
   //------------------------------------------------------------------------------------------------------------------------
   
-  deadBoard();
-  if(left == 0 || center == 0 || right == 0){//player if there are still safe moves
-    counter = 0;
-    random = int(random(1,Count));//chose a random safe move
-    for(int i = 0; i < 3; i++){
-      for(int j = 0; j < 3; j++){
-        if(L_board[j][i] == 3){
-          counter++;
-          if(counter == random){
-            L_board[j][i] = 1;
-          }
-        }if(C_board[j][i] == 3){
-          counter++;
-          if(counter == random){
-            C_board[j][i] = 1;
-          }
-        }if(R_board[j][i] == 3){
-          counter++;
-          if(counter == random){
-            R_board[j][i] = 1;
-          }
-        }
-      }
-    }
-    
-    //-------------------------------------------------------------------------------------------------------------
-    
-    if(Count == 0){
-      random = int(random(1,none));//if there are no safe moves, chose a random losing move
+  if(HARD == true){
+  
+  }else if(HARD == false){
+    deadBoard();
+    if(left == 0 || center == 0 || right == 0){//player if there are still safe moves
+      counter = 0;
+      random = int(random(1,Count));//chose a random safe move
       for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
-          if(L_board[j][i] == 0){
+          if(L_board[j][i] == 3){
             counter++;
             if(counter == random){
               L_board[j][i] = 1;
             }
-          }if(C_board[j][i] == 0){
+          }if(C_board[j][i] == 3){
             counter++;
             if(counter == random){
               C_board[j][i] = 1;
             }
-          }if(R_board[j][i] == 0){
+          }if(R_board[j][i] == 3){
             counter++;
             if(counter == random){
               R_board[j][i] = 1;
@@ -392,18 +370,44 @@ void AI(){
           }
         }
       }
-    }
     
-    //-------------------------------------------------------------------------------------------------------------
-    //Last thing before player move
-    deadBoard();
-    if(left + center + right == 3){
-      player = 1;
-    }else{
-      player = 2;
+      //-------------------------------------------------------------------------------------------------------------
+    
+      if(Count == 0){
+        random = int(random(1,none));//if there are no safe moves, chose a random losing move
+        for(int i = 0; i < 3; i++){
+          for(int j = 0; j < 3; j++){
+            if(L_board[j][i] == 0){
+              counter++;
+              if(counter == random){
+                L_board[j][i] = 1;
+              }
+            }if(C_board[j][i] == 0){
+              counter++;
+              if(counter == random){
+                C_board[j][i] = 1;
+              }
+            }if(R_board[j][i] == 0){
+              counter++;
+              if(counter == random){
+                R_board[j][i] = 1;
+              }
+            }
+          }
+        }
+      }
+      deadBoard();
+      if(left + center + right == 3){
+        player = 1;
+      }else{
+        player = 2;
+      }
     }
   }
-  for(int i = 0; i < 3; i++){//Count the posible moves
+    //-------------------------------------------------------------------------------------------------------------
+    //Last thing before player move
+    
+  for(int i = 0; i < 3; i++){//reset AI analysis
     for(int j = 0; j < 3; j++){
       if(L_board[j][i] == 3){
         L_board[j][i] = 0;
