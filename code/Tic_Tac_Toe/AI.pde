@@ -8,7 +8,12 @@ void AI(){
   for(int i = 0; i < 3; i++){//look for available moves
     for(int j = 0; j < 3; j++){
       if(left + center + right == 3){
-
+        
+        
+        
+        
+        
+        
       }else{
         if(left == 0){
           if(L_board[j][i] == 0){
@@ -25,14 +30,14 @@ void AI(){
             R_board[j][i] = 3;
           }
         }
+//        println(L_board[j][i]);
       }
     }
   }
   
-  //------------------------------------------------------------------------------------------------------
   
   if(left == 0){
-    if(L_board[0][0] + L_board[0][1] + L_board[0][2] == 5 ){//elliminate posible losing moves for the left board
+    if(L_board[0][0] + L_board[0][1] + L_board[0][2] == 5 ){
       
       if(L_board[0][0] == 3){
         L_board[0][0] = 0;
@@ -107,8 +112,10 @@ void AI(){
     }
   }
   
+  //Center Board
+  
   if(center == 0){
-    if(C_board[0][0] + C_board[0][1] + C_board[0][2] == 5 ){//elliminate posible losing moves for the center board
+    if(C_board[0][0] + C_board[0][1] + C_board[0][2] == 5 ){
       
       if(C_board[0][0] == 3){
         C_board[0][0] = 0;
@@ -183,8 +190,10 @@ void AI(){
     }
   }
   
+  //Right Board
+  
   if(right == 0){
-    if(R_board[0][0] + R_board[0][1] + R_board[0][2] == 5 ){//elliminate posible losing moves for the right board
+    if(R_board[0][0] + R_board[0][1] + R_board[0][2] == 5 ){
       
       if(R_board[0][0] == 3){
         R_board[0][0] = 0;
@@ -259,8 +268,7 @@ void AI(){
     }
   }
   
-    //------------------------------------------------------------------------------------------------------
-  //elliminate posible moves on the dead boards
+  //account for dead boards
   if(left == 1){
     for(int i = 0; i < 3; i++){
       for(int j = 0; j < 3; j++){
@@ -287,7 +295,7 @@ void AI(){
     }
   }
   
-  //------------------------------------------------------------------------------------------------------
+  
   
   for(int i = 0; i < 3; i++){//Count the posible moves
     for(int j = 0; j < 3; j++){
@@ -338,9 +346,9 @@ void AI(){
   //****************************************************** 
   
   deadBoard();
-  if(left == 0 || center == 0 || right == 0){//if there are still moves to be made, play
+  if(left == 0 || center == 0 || right == 0){
     counter = 0;
-    random = int(random(1,Count));//chose a random available move and play there
+    random = int(random(1,Count));
     for(int i = 0; i < 3; i++){
       for(int j = 0; j < 3; j++){
         if(L_board[j][i] == 3){
@@ -362,9 +370,7 @@ void AI(){
       }
     }
     
-      //------------------------------------------------------------------------------------------------------
-    
-    if(Count == 0){//if there are no safe moves to make, play in a random losing position
+    if(Count == 0){
       random = int(random(1,none));
       for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
@@ -387,20 +393,22 @@ void AI(){
         }
       }
     }
-  }  
-  
-  //------------------------------------------------------------------------------------------------------
-    
-  deadBoard();
-  if(left + center + right == 3){//if the computer lost, player 1 wins
-    player = 1;
-  }else{
-    player = 2;
+    deadBoard();
+    if(left + center + right == 3){
+      player = 1;
+    }else{
+      player = 2;
+    }
   }
- 
-  //------------------------------------------------------------------------------------------------------
+  
+  
+  
+  
+  
+  
   //Last thing before player move
-  for(int i = 0; i < 3; i++){//reset AI analysis
+  
+  for(int i = 0; i < 3; i++){//Count the posible moves
     for(int j = 0; j < 3; j++){
       if(L_board[j][i] == 3){
         L_board[j][i] = 0;
@@ -411,4 +419,6 @@ void AI(){
       }
     }
   }
+  
+  
 }
