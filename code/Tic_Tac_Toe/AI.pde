@@ -9,11 +9,6 @@ void AI(){
     for(int j = 0; j < 3; j++){
       if(left + center + right == 3){
         
-        
-        
-        
-        
-        
       }else{
         if(left == 0){
           if(L_board[j][i] == 0){
@@ -30,14 +25,14 @@ void AI(){
             R_board[j][i] = 3;
           }
         }
-//        println(L_board[j][i]);
       }
     }
   }
   
+  //------------------------------------------------------------------------------------------------------------------------
   
   if(left == 0){
-    if(L_board[0][0] + L_board[0][1] + L_board[0][2] == 5 ){
+    if(L_board[0][0] + L_board[0][1] + L_board[0][2] == 5 ){//elliminate posible losing moves for the left board
       
       if(L_board[0][0] == 3){
         L_board[0][0] = 0;
@@ -112,10 +107,10 @@ void AI(){
     }
   }
   
-  //Center Board
+  //------------------------------------------------------------------------------------------------------------------------
   
   if(center == 0){
-    if(C_board[0][0] + C_board[0][1] + C_board[0][2] == 5 ){
+    if(C_board[0][0] + C_board[0][1] + C_board[0][2] == 5 ){//elliminate posible losing moves for the center board
       
       if(C_board[0][0] == 3){
         C_board[0][0] = 0;
@@ -190,10 +185,10 @@ void AI(){
     }
   }
   
-  //Right Board
+  //------------------------------------------------------------------------------------------------------------------------
   
   if(right == 0){
-    if(R_board[0][0] + R_board[0][1] + R_board[0][2] == 5 ){
+    if(R_board[0][0] + R_board[0][1] + R_board[0][2] == 5 ){//elliminate posible losing moves for the right board
       
       if(R_board[0][0] == 3){
         R_board[0][0] = 0;
@@ -268,6 +263,7 @@ void AI(){
     }
   }
   
+  //------------------------------------------------------------------------------------------------------------------------
   //account for dead boards
   if(left == 1){
     for(int i = 0; i < 3; i++){
@@ -295,7 +291,7 @@ void AI(){
     }
   }
   
-  
+  //------------------------------------------------------------------------------------------------------------------------
   
   for(int i = 0; i < 3; i++){//Count the posible moves
     for(int j = 0; j < 3; j++){
@@ -317,6 +313,7 @@ void AI(){
     }
   }
   
+  //------------------------------------------------------------------------------------------------------------------------
   //******************************************************
     //debug
   println(Count);
@@ -344,11 +341,12 @@ void AI(){
   println();
   
   //****************************************************** 
+  //------------------------------------------------------------------------------------------------------------------------
   
   deadBoard();
-  if(left == 0 || center == 0 || right == 0){
+  if(left == 0 || center == 0 || right == 0){//player if there are still safe moves
     counter = 0;
-    random = int(random(1,Count));
+    random = int(random(1,Count));//chose a random safe move
     for(int i = 0; i < 3; i++){
       for(int j = 0; j < 3; j++){
         if(L_board[j][i] == 3){
@@ -370,8 +368,10 @@ void AI(){
       }
     }
     
+    //-------------------------------------------------------------------------------------------------------------
+    
     if(Count == 0){
-      random = int(random(1,none));
+      random = int(random(1,none));//if there are no safe moves, chose a random losing move
       for(int i = 0; i < 3; i++){
         for(int j = 0; j < 3; j++){
           if(L_board[j][i] == 0){
@@ -393,6 +393,9 @@ void AI(){
         }
       }
     }
+    
+    //-------------------------------------------------------------------------------------------------------------
+    //Last thing before player move
     deadBoard();
     if(left + center + right == 3){
       player = 1;
@@ -400,14 +403,6 @@ void AI(){
       player = 2;
     }
   }
-  
-  
-  
-  
-  
-  
-  //Last thing before player move
-  
   for(int i = 0; i < 3; i++){//Count the posible moves
     for(int j = 0; j < 3; j++){
       if(L_board[j][i] == 3){
@@ -419,6 +414,4 @@ void AI(){
       }
     }
   }
-  
-  
 }

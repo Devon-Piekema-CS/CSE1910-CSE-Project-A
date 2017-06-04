@@ -24,6 +24,8 @@ void setup(){
   frameRate(60);
 }
 
+//---------------------------------------------------------------------------------------------
+
 void draw(){
   background(255,255,255);
   if(gameType == 0){//draw gameType select
@@ -36,8 +38,7 @@ void draw(){
     text("MultiPlayer",width/2,280);
   }else if(gameType == 1 || gameType == 2){
     
-    
-    
+    //---------------------------------------------------------------------------------------------
     
     strokeWeight(4);
     fill(200,200,200);//dead board cover
@@ -49,6 +50,8 @@ void draw(){
     }if(right == 1){
       rect(5*width/6,height/2,310,310);
     }
+    
+    //---------------------------------------------------------------------------------------------
   
     line(L_vl,10,L_vl,height-10);//Left Grid
     line(L_vr,10,L_vr,height-10);
@@ -64,7 +67,9 @@ void draw(){
     line(R_vr,10,R_vr,height-10);
     line(650,ht,950,ht);
     line(650,hb,950,hb);
- 
+    
+    //---------------------------------------------------------------------------------------------
+    
     for(int L_X = 0; L_X < 3; L_X ++){//Left Board marker
       for(int L_Y = 0; L_Y < 3; L_Y ++){
         int Lx = (L_X*110)+50;
@@ -77,7 +82,6 @@ void draw(){
         }
       }
     }
-  
     for(int C_X = 0; C_X < 3; C_X ++){//Center Board marker
       for(int C_Y = 0; C_Y < 3; C_Y ++){
         int Cx = (C_X*110)+370;
@@ -90,7 +94,6 @@ void draw(){
         }
       }
     }
-  
     for(int R_X = 0; R_X < 3; R_X ++){//Right Board marker
       for(int R_Y = 0; R_Y < 3; R_Y ++){
         int Rx = (R_X*110)+690;
@@ -103,13 +106,15 @@ void draw(){
         }
       }
     }
+    
+    //---------------------------------------------------------------------------------------------
+    
   if(gameType == 1){
       if(plays%2 == 0){//turn changer
         player = 1;
       }else{
         player = 2;
       }
-  
       textAlign(CENTER,CENTER);//victory notice
       textSize(125);
       if(left + center + right == 3){
@@ -122,7 +127,6 @@ void draw(){
         }
       }
     }else if(gameType == 2){
-  
       textAlign(CENTER,CENTER);//victory notice
       textSize(125);
       if(left + center + right == 3){
@@ -135,6 +139,6 @@ void draw(){
         }
       }
     }
-}
+  }
   deadBoard();
 }
