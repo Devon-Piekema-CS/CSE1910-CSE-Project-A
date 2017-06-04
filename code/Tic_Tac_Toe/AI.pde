@@ -355,9 +355,13 @@ void AI(){
           for(int j = 0; j < 3; j++){
             if(C_board[j][i] == 3){
               R = true;
-            }if(R_board[j][i] == 3){
+            }else{
+              R = false;
+            }
+            if(R_board[j][i] == 3){
               C = true;
             }else{
+              C = false;
             }
           }
         }
@@ -366,10 +370,13 @@ void AI(){
           for(int j = 0; j < 3; j++){
             if(L_board[j][i] == 3){
               R = true;
-            }if(R_board[j][i] == 3){
+            }else{
+              R = false;
+            }
+            if(R_board[j][i] == 3){
               L = true;
             }else{
-            
+              L = false;
             }
           }
         }
@@ -378,15 +385,46 @@ void AI(){
           for(int j = 0; j < 3; j++){
             if(L_board[j][i] == 3){
               C = true;
-            }if(C_board[j][i] == 3){
+            }else{
+              C = false;
+            }
+            if(C_board[j][i] == 3){
               L = true;
             }else{
-            
+              L = false;
             }
           }
         }
       }
     }
+    
+    //--------------------------------------------------------------------------------------------
+    
+    if(L == true && C == false && R == false){
+      for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+          
+        }
+      }
+    }if(L == false && C == true && R == false){
+      for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+          
+        }
+      }
+    }if(L == false && C == false && R == true){
+      for(int i = 0; i < 3; i++){
+        for(int j = 0; j < 3; j++){
+          
+        }
+      }
+    }
+    
+    print(left + center + right,"  ");
+    println(L,C,R);
+    println(left,center,right);
+    //--------------------------------------------------------------------------------------------
+    
     deadBoard();
     if(left == 0 || center == 0 || right == 0){//player if there are still safe moves
       counter = 0;
