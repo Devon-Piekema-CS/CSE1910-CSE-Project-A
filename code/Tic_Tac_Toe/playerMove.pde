@@ -5,7 +5,7 @@ boolean HARD;
 
 void mouseReleased(){
   
-  if(gameType == 0){
+  if(gameType == 0){//gameType selector
   
     if(mouseY > height/2){
       gameType = 1;
@@ -14,7 +14,7 @@ void mouseReleased(){
       gameType = 2;
     }
     
-  }else if(gameType == 2){
+  }else if(gameType == 2){//difficulty selector
     if(mouseX < width/2){
       HARD = false;
       gameType = 3;
@@ -30,8 +30,8 @@ void mouseReleased(){
     
     if(left == 0){
       if(mouseX < L_vl && mouseX > 10 && mouseY < ht && mouseY > 10){//L_tl
-        if(L_board[0][0] == 0){
-          L_board[0][0] = 1;
+        if(L_board[0][0] == 0){//if available
+          L_board[0][0] = 1;//place marker
         }
       }
     
@@ -207,6 +207,9 @@ void mouseReleased(){
         }
       }
     }
+    
+    //------------------------------------------------------------------------------------------------
+    
     last = plays;
     plays = 0;
     for(int i = 0; i < 3; i++){//play counter
@@ -226,7 +229,9 @@ void mouseReleased(){
 //  println(plays);
     deadBoard();
     
+    //------------------------------------------------------------------------------------------------
     //*******************************************************
+    //debug
     for(int i = 0; i < 3; i++){
       for(int j = 0; j < 3; j++){
      // print(" | ",L_board[i][j]);
@@ -236,6 +241,8 @@ void mouseReleased(){
 //  println(mouseX,",",mouseY);
 //  println(player);
   }
+  //******************************************************
+  //------------------------------------------------------------------------------------------------
   
   }else if(gameType == 3){//SinglePlayer
     
@@ -250,6 +257,8 @@ void mouseReleased(){
       last = last + tmp;
     }  
   } 
+  
+  //------------------------------------------------------------------------------------------------
     
   if(left == 0){
     if(mouseX < L_vl && mouseX > 10 && mouseY < ht && mouseY > 10){//L_tl
@@ -430,6 +439,9 @@ void mouseReleased(){
         }
       }
     }
+    
+    //------------------------------------------------------------------------------------------------
+    
     plays = 0;
     for(int i = 0; i < 3; i++){//play counter
       for(int j = 0; j < 3; j++){
@@ -442,11 +454,7 @@ void mouseReleased(){
       AI();
     }  
     
-
-    
-    
-    
-    
+    //------------------------------------------------------------------------------------------------
     //*******************************************************
     //debug
     
@@ -474,5 +482,7 @@ void mouseReleased(){
 //    println();
   }
   }
-  
 }
+
+//**************************************************************
+//------------------------------------------------------------------------------------------------
