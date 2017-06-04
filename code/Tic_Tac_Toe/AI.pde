@@ -2,6 +2,9 @@ int Count;
 int counter;
 int random;
 int none;
+int Lcount;
+int Ccount;
+int Rcount;
 
 boolean L;
 boolean C;
@@ -348,12 +351,18 @@ void AI(){
   
   //****************************************************** 
   //------------------------------------------------------------------------------------------------------------------------
-
+  
   if(HARD == true){//HARd difficulty
     L = false;
     C = false;
     R = false;
+    Lcount = 9;
+    Ccount = 9;
+    Rcount = 9;
     if(left + center + right == 1){//if only one board is dead,
+    
+    //-----------------------------------
+    
       if(left == 1){               //check if there is a way the AI can move so the Player
         for(int i = 0; i < 3; i++){//can only make a losing move on his next turn.
           for(int j = 0; j < 3; j++){
@@ -364,29 +373,42 @@ void AI(){
                     for(int o = 0; o < 3; o++){
                       for(int f = 0; f < 3; f++){
                         if(R_board[o][f] == 3){
-                        }else{C = true;}//if the AI can make such a move, the board which it can be played is assigned [true]
+                        }else{
+                          Ccount--;
+                        }if(Ccount == 0){
+                          C = true;//if the AI can make such a move, the board which it can be played is assigned [true]
+                        }
+                        
                       }
                     }
+                    Ccount = 9;
                   }
                 }
               }
-            }
-            if(R_board[j][i] == 3){
+            }if(R_board[j][i] == 3){
               for(int h = 0; h < 3; h++){
                 for(int k = 0; k < 3; k++){
                   if(R_board[h][k] == 0){
                     for(int o = 0; o < 3; o++){
                       for(int f = 0; f < 3; f++){
                         if(C_board[o][f] == 3){
-                        }else{R = true;}
+                        }else{
+                          Rcount--;
+                        }if(Rcount == 0){
+                          R = true;//if the AI can make such a move, the board which it can be played is assigned [true]
+                        }
                       }
                     }
+                    Rcount = 9;
                   }
                 }
               }
             }
           }
         }
+        
+        //---------------------------
+        
       }if(center == 1){
         for(int i = 0; i < 3; i++){
           for(int j = 0; j < 3; j++){
@@ -397,29 +419,41 @@ void AI(){
                     for(int o = 0; o < 3; o++){
                       for(int f = 0; f < 3; f++){
                         if(R_board[o][f] == 3){
-                        }else{L = true;}
+                        }else{
+                          Lcount--;
+                        }if(Lcount == 0){
+                          L = true;//if the AI can make such a move, the board which it can be played is assigned [true]
+                        }
                       }
                     }
+                    Lcount = 9;
                   }
                 }
               }
-            }
-            if(R_board[j][i] == 3){
+            }if(R_board[j][i] == 3){
               for(int h = 0; h < 3; h++){
                 for(int k = 0; k < 3; k++){
                   if(R_board[h][k] == 0){
                     for(int o = 0; o < 3; o++){
                       for(int f = 0; f < 3; f++){
                         if(L_board[o][f] == 3){
-                        }else{R = true;}
+                        }else{
+                          Rcount--;
+                        }if(Rcount == 0){
+                          R = true;//if the AI can make such a move, the board which it can be played is assigned [true]
+                        }
                       }
                     }
+                    Rcount = 9;
                   }
                 }
               }
             }
           }
         }
+        
+        //-------------------------------
+        
       }if(right == 1){
         for(int i = 0; i < 3; i++){
           for(int j = 0; j < 3; j++){
@@ -430,23 +464,32 @@ void AI(){
                     for(int o = 0; o < 3; o++){
                       for(int f = 0; f < 3; f++){
                         if(C_board[o][f] == 3){
-                        }else{L = true;}
+                        }else{
+                          Lcount--;
+                        }if(Lcount == 0){
+                          L = true;//if the AI can make such a move, the board which it can be played is assigned [true]
+                        }
                       }
                     }
+                    Lcount = 9;
                   }
                 }
               }
-            }
-            if(C_board[j][i] == 3){
+            }if(C_board[j][i] == 3){
               for(int h = 0; h < 3; h++){
                 for(int k = 0; k < 3; k++){
                   if(C_board[h][k] == 0){
                     for(int o = 0; o < 3; o++){
                       for(int f = 0; f < 3; f++){
                         if(L_board[o][f] == 3){
-                        }else{C = true;}
+                        }else{
+                          Ccount--;
+                        }if(Ccount == 0){
+                          C = true;//if the AI can make such a move, the board which it can be played is assigned [true]
+                        }
                       }
                     }
+                    Ccount = 9;
                   }
                 }
               }
@@ -455,7 +498,14 @@ void AI(){
         }
       }
     }
+    //*********************************
+    //debug
+    println(" ",left,"   -   ",center,"   -   ",right);
+    println(L," - ",C," - ",R);
     
+    
+    
+    //*********************************
     //--------------------------------------------------------------------------------------------
     
     if(L == true || C == true || R == true){//if the AI can "win" count the winning moves

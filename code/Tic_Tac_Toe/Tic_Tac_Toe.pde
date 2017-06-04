@@ -1,3 +1,5 @@
+int P;
+
 int[][] L_board = {{0,0,0},{0,0,0},{0,0,0}};//Left Array
 
 int[][] C_board = {{0,0,0},{0,0,0},{0,0,0}};//Center Array
@@ -152,4 +154,30 @@ void draw(){
     }
   }
   deadBoard();
+ 
+  if(gameType == 3){
+    if(P% 2 == 0){
+    }else{
+      delay(500);
+    }
+  }
+  
+  //*******************************************
+  //debug
+  
+  P = 0;
+  for(int i = 0; i < 3; i++){
+      for(int j = 0; j < 3; j++){
+        if(L_board[i][j] == 1){
+          P++;
+        }if(C_board[i][j] == 1){
+          P++;
+        }if(R_board[i][j] == 1){
+          P++;
+        }
+      }
+    }
+    println(P);
+  
+  //**********************************  
 }
