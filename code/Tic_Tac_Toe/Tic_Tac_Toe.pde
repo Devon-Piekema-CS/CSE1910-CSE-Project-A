@@ -1,4 +1,4 @@
-int P;
+int P;//debug variable
 
 int[][] L_board = {{0,0,0},{0,0,0},{0,0,0}};//Left Array
 
@@ -80,7 +80,7 @@ void draw(){
     line(R_vr,10,R_vr,height-10);
     line(650,ht,950,ht);
     line(650,hb,950,hb);
-    
+
     //---------------------------------------------------------------------------------------------
     
     for(int L_X = 0; L_X < 3; L_X ++){//Left Board marker

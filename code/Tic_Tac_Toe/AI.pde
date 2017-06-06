@@ -2,6 +2,7 @@ int Count;
 int counter;
 int random;
 int none;
+
 int Lcount;
 int Ccount;
 int Rcount;
@@ -18,7 +19,7 @@ void AI(){
   for(int i = 0; i < 3; i++){//look for available moves
     for(int j = 0; j < 3; j++){//assign available spots the value [3]
       if(left + center + right == 3){
-      }else{//if gameover
+      }else{//if the game isn't over
         if(left == 0){
           if(L_board[j][i] == 0){
             L_board[j][i] = 3;
