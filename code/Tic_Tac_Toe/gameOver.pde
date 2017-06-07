@@ -5,50 +5,50 @@ int right = 0;
 void deadBoard(){
   strokeWeight(3);
   if(L_board[0][0] == 1 && L_board[0][1] == 1 && L_board[0][2] == 1){//vertical combos for left board
-      left = 1;
+    line((height/2)-110,15,(height/2)-110,height-15);
   }if(L_board[1][0] == 1 && L_board[1][1] == 1 && L_board[1][2] == 1){
-      left = 1;
+    line(height/2,height - 15,height/2,15);
   }if(L_board[2][0] == 1 && L_board[2][1] == 1 && L_board[2][2] == 1){
-      left = 1;
+    line((height/2)+110,15,(height/2)+110,height-15);
   }
     
   if(L_board[0][0] == 1 && L_board[1][0] == 1 && L_board[2][0] == 1){//horizontal combos for left board
-      left = 1;
+    line(15,(ht - 10)/2,305,(ht - 10)/2);
   }if(L_board[0][1] == 1 && L_board[1][1] == 1 && L_board[2][1] == 1){
-    left = 1;
+    line(305,height/2,15,height/2);
   }if(L_board[0][2] == 1 && L_board[1][2] == 1 && L_board[2][2] == 1){
-    left = 1;
+    line(15,(hb + height+10)/2,305,(hb + height+10)/2);
   }
     
   if(L_board[0][0] == 1 && L_board[1][1] == 1 && L_board[2][2] == 1){//diaginal combos for left board
-      left = 1;
+    line(15,15,305,height-15);
   }if(L_board[2][0] == 1 && L_board[1][1] == 1 && L_board[0][2] == 1){
-      left = 1;
+    line(305,15,15,height-15);
   }
   
   
   //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   //Center Board
   if(C_board[0][0] == 1 && C_board[0][1] == 1 && C_board[0][2] == 1){//vertical combos for center board
-      center = 1;
+    line((width/2)-110,15,(width/2)-110,height-15);
   }if(C_board[1][0] == 1 && C_board[1][1] == 1 && C_board[1][2] == 1){
-      center = 1;
+    line(width/2,15,width/2,height-15);
   }if(C_board[2][0] == 1 && C_board[2][1] == 1 && C_board[2][2] == 1){
-      center = 1;
+    line((width/2)+110,15,(width/2)+110,height-15);
   }
     
   if(C_board[0][0] == 1 && C_board[1][0] == 1 && C_board[2][0] == 1){//horizontal combos for center board
-     center = 1;
+    line((width/2)-145,(ht - 10)/2,(width/2)+145,(ht - 10)/2);
   }if(C_board[0][1] == 1 && C_board[1][1] == 1 && C_board[2][1] == 1){
-    center = 1;
+    line((width/2)-145,height/2,(width/2)+145,height/2);
   }if(C_board[0][2] == 1 && C_board[1][2] == 1 && C_board[2][2] == 1){
-      center = 1;
+    line((width/2)-145,(hb + height+10)/2,(width/2)+145,(hb + height+10)/2);
   }
     
   if(C_board[0][0] == 1 && C_board[1][1] == 1 && C_board[2][2] == 1){//diaginal combos for center board
-    center = 1;
+    line((width/2)-145,15,(width/2)+145,height - 15);
   }if(C_board[2][0] == 1 && C_board[1][1] == 1 && C_board[0][2] == 1){
-      center = 1;
+    line((width/2)-145,height - 15,(width/2)+145,15);
   }
   
 

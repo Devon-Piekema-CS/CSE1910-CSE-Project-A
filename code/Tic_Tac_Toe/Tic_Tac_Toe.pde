@@ -154,7 +154,6 @@ void draw(){
     }
   }
   deadBoard();
- 
   if(gameType == 3){
     if(P% 2 == 0){
     }else{
